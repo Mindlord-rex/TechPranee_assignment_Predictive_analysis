@@ -120,5 +120,5 @@ M0,72,150,0 M1,85,200,1
     ```
 3. **Get Prediction**
    ```bash
-    curl -X POST -H "Content-Type: application/json" -d '{"Temperature": 75, "Run_Time": 180}' http://localhost:8000/predict
+   curl -X POST -H "Content-Type: application/json" -d "{\"Temperature\": 75, \"Run_Time\": 180}" http://localhost:8000/predict
     ```
