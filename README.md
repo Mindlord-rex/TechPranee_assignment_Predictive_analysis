@@ -99,7 +99,8 @@ df.to_csv('sample_data.csv', index=False)
 
 ### **Sample Data** 
 ```csv 
-Machine_ID,Temperature,Run_time,Downtime_Flag M0,72,150,0 M1,85,200,1
+Machine_ID,Temperature,Run_time,Downtime_Flag
+M0,72,150,0 M1,85,200,1
 ```
 
 ## **Model Details** 
