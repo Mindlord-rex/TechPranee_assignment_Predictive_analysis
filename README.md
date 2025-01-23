@@ -81,6 +81,22 @@ A RESTful API built with FastAPI to predict machine downtime using manufacturing
    - `Temperature`
    - `Run_time`
    - `Downtime_Flag`
+
+### **Dummy Code Generator** Generate a dummy dataset for given features with random values
+```Code
+import pandas as pd
+import numpy as np
+
+data = {
+    'Machine_ID': [f'M{i}' for i in range(100)],
+    'Temperature': np.random.randint(50, 100, 100),
+    'Run_Time': np.random.randint(60, 300, 100),
+    'Downtime_Flag': np.random.choice([0, 1], 100)
+}
+df = pd.DataFrame(data)
+df.to_csv('sample_data.csv', index=False)
+```
+
 ### **Sample Data** 
 ```csv 
 Machine_ID,Temperature,Run_time,Downtime_Flag M0,72,150,0 M1,85,200,1
@@ -92,7 +108,7 @@ Machine_ID,Temperature,Run_time,Downtime_Flag M0,72,150,0 M1,85,200,1
    - **Output:** Binary classification (`0 = No Downtime`, `1 = Downtime`)
    - **Persistence:** The trained model is saved as `trained_model.pkl`.
      
-## **Testing ** 
+## Testing 
 1. **Upload Data**
    ```bash
    curl -X POST -F "file=@sample_data.csv" http://localhost:8000/upload
